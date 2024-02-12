@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day!</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7d7e1; /* Light pink background */
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #e91e63; /* Pink header */
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        input[type="password"] {
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: #e91e63; /* Pink button */
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="passwordContainer">
+        <h1>Enter the password to access your Valentine's Day message</h1>
+        <form id="passwordForm" onsubmit="return checkPassword()">
+            <input type="password" id="password" placeholder="Password" required>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <div id="message" style="display: none;">
+        <div class="container">
+            <h1>My Dearest Sophia,</h1>
+            <p>Happy Valentine's Day! 🌹❤️</p>
+            <p>I just wanted to take a moment to express how much you mean to me - I feel incredibly lucky to have you in my life.</p>
+            <p>Your love fills my days with happiness and warmth, and I cherish every moment we spend together. You are my rock, my confidant, and my best friend.</p>
+            <p>Thank you for being you, for loving me unconditionally, and for making every day brighter. I love you more than words can express.</p>
+            <img src="https://i.imgur.com/PGWENz3.jpeg" alt="You and Me">
+            <p>Forever and always,</p>
+            <p>Dimitris</p>
+        </div>
+    </div>
+
+    <script>
+        function checkPassword() {
+            var password = document.getElementById("password").value;
+            if (password === "yourDimi") { // Change "your_secret_password" to your chosen password
+                document.getElementById("passwordContainer").style.display = "none";
+                document.getElementById("message").style.display = "block";
+                return false; // Prevent form submission
+            } else {
+                alert("Incorrect password. Please try again.");
+                return false; // Prevent form submission
+            }
+        }
+    </script>
+</body>
+</html>
